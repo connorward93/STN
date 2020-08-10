@@ -1,0 +1,124 @@
+.nav {
+  /* border-right: 1px solid #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  right: 0;
+  top: -48px;
+  transition: all 0.3s ease;
+}
+
+.nav.collapsed {
+  top: 0;
+}
+
+.nav a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 8px;
+}
+
+.menu__button {
+  position: fixed;
+  top: 6.5px;
+  right: 0;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  animation: fadein 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.4px;
+  height: 31px;
+  width: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+}
+
+.nav__icon {
+  width: 22px;
+  position: relative;
+  margin: 8px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.nav__icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.nav__icon span:nth-child(1) {
+  top: 0;
+}
+
+.nav__icon span:nth-child(2),
+.nav__icon span:nth-child(3) {
+  top: 8px;
+}
+
+.nav__icon span:nth-child(4) {
+  top: 16px;
+}
+
+.nav__icon.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+.nav__icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.nav__icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.nav__icon.open span:nth-child(4) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}

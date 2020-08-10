@@ -1,0 +1,65 @@
+.channel__container {
+  height: 100vh;
+  width: 100%;
+}
+
+.channel {
+  height: 50%;
+  display: flex;
+  border-bottom: 1px solid #fff;
+}
+
+.channel__title {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.channel__title h5,
+.channel__title h6 {
+  font-size: 12px;
+}
+
+.channel__icon {
+  color: #000;
+  background-color: #fff;
+  font-weight: 600;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.channel__thumbnail,
+.channel__thumbnail img {
+  height: 100%;
+}
+
+.channel__thumbnail {
+  width: 100%;
+  position: relative;
+}
+
+.channel__location {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.channel__play {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  cursor: pointer;
+}
+
+.time {
+  display: block;
+  font-size: 12px;
+}
