@@ -11,14 +11,18 @@ import ListItem from './ListItem';
 // } from '../live/channelSlice';
 import styles from './Discovery.css';
 
-export default function Picks() {
-  const [recentlyAdded, setRecentlyAdded] = useState([]);
+export default function Hosts() {
+  const [hosts, setHosts] = useState([]);
+  // const dispatch = useDispatch();
+  // const channelData = useSelector(channels);
+  // const playState = useSelector(playing);
+  // const current = useSelector(currentlyPlaying);
 
   useEffect(() => {
     const fetchData = () =>
       axios
-        .get('https://www.nts.live/api/v2/collections/recently-added')
-        .then((res) => setRecentlyAdded(res.data.results));
+        .get('https://www.nts.live/api/v2/shows/')
+        .then((res) => setHosts(res.data.results));
     fetchData();
   }, []);
 
@@ -30,13 +34,9 @@ export default function Picks() {
     genres: [{ id: string; value: string }];
   };
 
-  const recentlyAddedComponents = recentlyAdded.map((recent: Props) => {
-    return <ListItem key={recent.name} data={recent} />;
+  const hostsComponents = hosts.map((host: Props) => {
+    return <ListItem key={host.name} data={host} />;
   });
 
-  return (
-    <div className={styles.discovery__transition}>
-      {recentlyAddedComponents}
-    </div>
-  );
+  return <div className={styles.discovery__transition}>{hostsComponents}</div>;
 }

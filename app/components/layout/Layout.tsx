@@ -1,5 +1,6 @@
 import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+
 import styles from './Layout.css';
 import Player from '../live/Player';
 
@@ -19,7 +20,7 @@ export default function Layout(props: Props) {
         }
       >
         <Link to="/">Live</Link>
-        <Link to="/discovery">Discovery</Link>
+        <Link to="/discovery/picks">Discovery</Link>
         <Link to="/">Search</Link>
         <Link to="/">Mixtapes</Link>
       </div>

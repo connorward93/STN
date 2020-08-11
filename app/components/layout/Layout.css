@@ -26,7 +26,7 @@
 
 .menu__button {
   position: fixed;
-  top: 6.5px;
+  top: 6px;
   right: 0;
   z-index: 11;
 }
@@ -36,8 +36,6 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-
-  /* z-index: 9; */
   animation: fadein 0.3s ease;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 10;
@@ -66,7 +64,8 @@
 }
 
 .nav__icon {
-  width: 22px;
+  height: 23px;
+  width: 23px;
   position: relative;
   margin: 8px;
   -webkit-transform: rotate(0deg);

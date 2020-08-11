@@ -1,4 +1,4 @@
 {
   "HOME": "/",
-  "DISCOVERY": "/discovery"
+  "DISCOVERY": "/discovery/:id"
 }

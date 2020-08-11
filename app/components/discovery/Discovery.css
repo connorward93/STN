@@ -2,23 +2,91 @@
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
-  margin-top: 48px;
 }
 
-.recent__container {
+.discovery__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: #000;
+  width: 100%;
+  z-index: 10;
+  right: 0;
+}
+
+.discovery__header h4 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.discovery__transition {
+  animation: fadein 0.4s ease;
+}
+
+.discovery__nav {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.mix__container {
   padding: 2px 0;
 }
 
-.recent__thumbnail {
+.mix__thumbnail {
   width: 100vw;
   height: 56.25vw;
 }
 
-.recent__description {
+.mix__description {
   padding: 12px;
+  padding-bottom: 30px;
+  position: relative;
 }
 
-.recent__description h5,
-.recent__description h6 {
+.mix__description h5 {
   font-size: 14px;
+}
+
+.mix__description h6,
+.mix__date {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.mix__date {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.mix__genre__container {
+  margin-top: 12px;
+}
+
+.mix__genre {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #999;
+  border: 1px solid #999;
+  padding: 4px;
+  margin-right: 8px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
