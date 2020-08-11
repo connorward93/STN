@@ -1,0 +1,24 @@
+.discovery__container {
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 48px;
+}
+
+.recent__container {
+  padding: 2px 0;
+}
+
+.recent__thumbnail {
+  width: 100vw;
+  height: 56.25vw;
+}
+
+.recent__description {
+  padding: 12px;
+}
+
+.recent__description h5,
+.recent__description h6 {
+  font-size: 14px;
+}

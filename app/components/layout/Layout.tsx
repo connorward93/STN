@@ -1,6 +1,7 @@
 import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Layout.css';
+import Player from '../live/Player';
 
 type Props = {
   children: ReactNode;
@@ -11,13 +12,14 @@ export default function Layout(props: Props) {
   const { children } = props;
   return (
     <>
+      <Player />
       <div
         className={
           isMenuOpen ? `${styles.nav} ${styles.collapsed}` : styles.nav
         }
       >
         <Link to="/">Live</Link>
-        <Link to="/">Discover</Link>
+        <Link to="/discovery">Discovery</Link>
         <Link to="/">Search</Link>
         <Link to="/">Mixtapes</Link>
       </div>
@@ -39,6 +41,7 @@ export default function Layout(props: Props) {
           <span />
         </div>
       </button>
+
       {children}
     </>
   );

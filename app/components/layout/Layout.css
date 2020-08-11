@@ -7,7 +7,7 @@
   background-color: #000;
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 11;
   right: 0;
   top: -48px;
   transition: all 0.3s ease;
@@ -28,7 +28,7 @@
   position: fixed;
   top: 6.5px;
   right: 0;
-  z-index: 10;
+  z-index: 11;
 }
 
 .overlay {
@@ -36,9 +36,11 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9;
+
+  /* z-index: 9; */
   animation: fadein 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
 }
 
 @keyframes fadein {

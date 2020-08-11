@@ -11,7 +11,6 @@ import {
   playing,
   updatePlaying,
 } from './channelSlice';
-import Player from './Player';
 import styles from './Live.css';
 
 export default function LiveChannels() {
@@ -52,6 +51,7 @@ export default function LiveChannels() {
     }) => {
       return (
         <div key={channel.channel_name} className={styles.channel}>
+          <div className={styles.channel__overlay} />
           <div
             className={styles.channel__thumbnail}
             style={{
@@ -65,7 +65,7 @@ export default function LiveChannels() {
               <span className={styles.channel__icon}>
                 {channel.channel_name}
               </span>
-              <div>
+              <div className={styles.channel__description}>
                 <h5>{channel.now.broadcast_title}</h5>
                 <span className={styles.time}>
                   {`${moment(channel.now.start_timestamp).format(
@@ -128,10 +128,5 @@ export default function LiveChannels() {
     }
   );
 
-  return (
-    <div className={styles.channel__container}>
-      {channelComponents}
-      <Player />
-    </div>
-  );
+  return <div className={styles.channel__container}>{channelComponents}</div>;
 }
