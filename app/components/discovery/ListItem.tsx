@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import styles from './Discovery.css';
 
@@ -34,9 +35,9 @@ export default function ListItem(props: Props) {
         <div className={styles.mix__genre__container}>
           {data.genres.map((genre) => {
             return (
-              <span key={genre.id} className={styles.mix__genre}>
-                {genre.value}
-              </span>
+              <Link to={`/search/?q=${genre.value}`} key={genre.id}>
+                <span className={styles.mix__genre}>{genre.value}</span>
+              </Link>
             );
           })}
         </div>

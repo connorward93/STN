@@ -1,4 +1,5 @@
 {
   "HOME": "/",
-  "DISCOVERY": "/discovery/:id"
+  "DISCOVERY": "/discovery/:id",
+  "SEARCH": "/search/"
 }

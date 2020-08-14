@@ -1,6 +1,5 @@
 import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-
 import styles from './Layout.css';
 import Player from '../live/Player';
 
@@ -19,13 +18,20 @@ export default function Layout(props: Props) {
           isMenuOpen ? `${styles.nav} ${styles.collapsed}` : styles.nav
         }
       >
-        <Link to="/">Live</Link>
-        <Link to="/discovery/picks">Discovery</Link>
-        <Link to="/">Search</Link>
-        <Link to="/">Mixtapes</Link>
+        <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
+          Live
+        </Link>
+        <Link to="/discovery/picks" onClick={() => toggleMenu(!isMenuOpen)}>
+          Discovery
+        </Link>
+        <Link to="/search/?q=" onClick={() => toggleMenu(!isMenuOpen)}>
+          Search
+        </Link>
+        <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
+          Mixtapes
+        </Link>
       </div>
       {isMenuOpen && <div className={styles.overlay} />}
-
       <button
         type="button"
         className={styles.menu__button}

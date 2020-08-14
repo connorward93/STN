@@ -5,6 +5,7 @@ import Latest from './Latest';
 import Picks from './Picks';
 import Hosts from './Hosts';
 import Guests from './Guests';
+import Genres from './Genres';
 import styles from './Discovery.css';
 
 export default function Discovery() {
@@ -19,6 +20,7 @@ export default function Discovery() {
     latest: <Latest />,
     hosts: <Hosts />,
     guests: <Guests />,
+    genres: <Genres />,
   };
 
   return (
@@ -31,7 +33,7 @@ export default function Discovery() {
         <Link to="/discovery/latest">Latest</Link>
         <Link to="/discovery/hosts">Hosts</Link>
         <Link to="/discovery/guests">Guests</Link>
-        <Link to="/discovery/latest">Genres</Link>
+        <Link to="/discovery/genres">Genres</Link>
       </nav>
       {components[id]}
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -49,6 +50,10 @@ export default function LiveChannels() {
       };
       next: { broadcast_title: string };
     }) => {
+      const desc =
+        channel.now.broadcast_title.length >= 50
+          ? `${channel.now.broadcast_title.substr(0, 50)}...`
+          : channel.now.broadcast_title;
       return (
         <div key={channel.channel_name} className={styles.channel}>
           <div className={styles.channel__overlay} />
@@ -59,6 +64,7 @@ export default function LiveChannels() {
                 ${channel.now.embeds.details.media.background_large}
               )`,
               backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           >
             <div className={styles.channel__title}>
@@ -66,11 +72,17 @@ export default function LiveChannels() {
                 {channel.channel_name}
               </span>
               <div className={styles.channel__description}>
-                <h5>{channel.now.broadcast_title}</h5>
+                <h5
+                  dangerouslySetInnerHTML={{
+                    __html: desc,
+                  }}
+                />
                 <span className={styles.time}>
-                  {`${moment(channel.now.start_timestamp).format(
-                    'LT'
-                  )} - ${moment(channel.now.end_timestamp).format('LT')}`}
+                  {`${moment(channel.now.start_timestamp)
+                    .locale('uk')
+                    .format('LT')} - ${moment(channel.now.end_timestamp)
+                    .locale('uk')
+                    .format('LT')}`}
                 </span>
               </div>
             </div>
