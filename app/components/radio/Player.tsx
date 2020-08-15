@@ -1,15 +1,16 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useEffect, MutableRefObject } from 'react';
 import { useSelector } from 'react-redux';
-import { playing, currentlyPlaying } from './channelSlice';
+import { playing } from '../common/playerSlice';
+import { currentlyPlaying } from './radioSlice';
 
-export default function Player() {
+export default function ChannelPlayer() {
   const audio = useRef() as MutableRefObject<HTMLAudioElement>;
   const state = useSelector(playing);
   const current = useSelector(currentlyPlaying);
 
   useEffect(() => {
-    if (state === true) {
+    if (state) {
       audio.current.play();
     } else {
       audio.current.pause();

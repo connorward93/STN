@@ -7,11 +7,9 @@ import {
   channels,
   updateChannels,
   currentlyPlaying,
-  play,
-  pause,
-  playing,
   updatePlaying,
-} from './channelSlice';
+} from './radioSlice';
+import { play, pause, playing, updatePlayer } from '../common/playerSlice';
 import styles from './Live.css';
 
 export default function LiveChannels() {
@@ -111,6 +109,7 @@ export default function LiveChannels() {
                 onClick={() => {
                   dispatch(updatePlaying(channel.channel_name));
                   dispatch(play());
+                  dispatch(updatePlayer('channel'));
                 }}
               >
                 <svg

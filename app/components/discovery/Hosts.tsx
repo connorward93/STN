@@ -1,22 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+
 import axios from 'axios';
 import ListItem from './ListItem';
-// import {
-//   currentlyPlaying,
-//   // play,
-//   // pause,
-//   playing,
-//   // updatePlaying,
-// } from '../live/channelSlice';
 import styles from './Discovery.css';
 
 export default function Hosts() {
   const [hosts, setHosts] = useState([]);
-  // const dispatch = useDispatch();
-  // const channelData = useSelector(channels);
-  // const playState = useSelector(playing);
-  // const current = useSelector(currentlyPlaying);
 
   useEffect(() => {
     const fetchData = () =>

@@ -1,7 +1,7 @@
 import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Layout.css';
-import Player from '../live/Player';
+import Player from './Player';
 
 type Props = {
   children: ReactNode;
@@ -27,7 +27,7 @@ export default function Layout(props: Props) {
         <Link to="/search/?q=" onClick={() => toggleMenu(!isMenuOpen)}>
           Search
         </Link>
-        <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
+        <Link to="/mixtapes/" onClick={() => toggleMenu(!isMenuOpen)}>
           Mixtapes
         </Link>
       </div>
