@@ -2,6 +2,12 @@
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.discovery__container.active__player {
+  margin-bottom: 60px;
 }
 
 .discovery__header {
@@ -14,6 +20,9 @@
   width: 100%;
   z-index: 10;
   right: 0;
+  position: sticky;
+  top: 0;
+  height: 48px;
 }
 
 .discovery__header h4 {
@@ -23,22 +32,26 @@
 }
 
 .discovery__transition {
-  animation: fadein 0.4s ease;
+  animation: fadein 0.5s ease;
 }
 
 .discovery__nav {
-  margin: 1px 20px 16px 20px;
-  margin-bottom: 16px;
+  padding: 8px 20px 16px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.6px;
+  position: sticky;
+  top: 48px;
+  z-index: 10;
+  background-color: #000;
 }
 
 .mix__container {
   padding: 2px 0;
+  animation: fadein 0.5s ease;
 }
 
 .mix__thumbnail {
@@ -113,4 +126,15 @@
   font-size: 14px;
   margin: 20px;
   letter-spacing: 0.5px;
+}
+
+.load__more {
+  margin: auto;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding: 4px 8px;
+  border: 1px solid #fff;
+  margin-bottom: 24px;
 }

@@ -20,15 +20,20 @@
 .nav a {
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   padding: 8px;
 }
 
 .menu__button {
   position: fixed;
-  top: 6px;
+  top: 0;
   right: 0;
+  /* width: 48px; */
   z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
 }
 
 .overlay {
@@ -50,7 +55,7 @@
   }
 }
 
-.logo {
+/* .logo {
   font-size: 12px;
   font-weight: 600;
   font-style: italic;
@@ -61,11 +66,11 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #fff;
-}
+} */
 
 .nav__icon {
-  height: 23px;
-  width: 23px;
+  height: 20px;
+  width: 20px;
   position: relative;
   margin: 8px;
   -webkit-transform: rotate(0deg);
@@ -123,3 +128,26 @@
   width: 0%;
   left: 50%;
 }
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 48px;
+  height: 48px;
+}
+
+/* .player__control {
+  position: fixed;
+  z-index: 11;
+  right: 0;
+  bottom: 60px;
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
+  padding: 6px;
+  padding-left: 16px;
+  box-sizing: border-box;
+  display: flex;
+  backdrop-filter: blur(15px);
+} */

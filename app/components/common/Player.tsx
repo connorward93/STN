@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { currentPlayer } from './playerSlice';
-import ChannelPlayer from '../radio/Player';
+import RadioPlayer from '../radio/RadioPlayer';
 import MixtapePlayer from '../mixtapes/MixtapePlayer';
 import MixcloudPlayer from '../mixcloud/MixcloudPlayer';
 
@@ -10,11 +10,12 @@ interface Source {
 }
 
 const player: Source = {
-  channel: <ChannelPlayer />,
+  channel: <RadioPlayer />,
   mixtape: <MixtapePlayer />,
   mixcloud: <MixcloudPlayer />,
 };
 
 export default function Player() {
-  return <div>{player[useSelector(currentPlayer)]}</div>;
+  const current = useSelector(currentPlayer);
+  return <div>{current && player[current]}</div>;
 }

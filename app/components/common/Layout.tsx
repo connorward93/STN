@@ -32,10 +32,11 @@ export default function Layout(props: Props) {
         </Link>
       </div>
       {isMenuOpen && <div className={styles.overlay} />}
+
       <button
         type="button"
-        className={styles.menu__button}
         onClick={() => toggleMenu(!isMenuOpen)}
+        className={styles.menu__button}
       >
         <div
           className={
@@ -48,7 +49,6 @@ export default function Layout(props: Props) {
           <span />
         </div>
       </button>
-
       {children}
     </>
   );

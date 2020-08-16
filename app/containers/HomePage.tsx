@@ -1,6 +1,6 @@
 import React from 'react';
-import LiveChannels from '../components/radio/Live';
+import Radio from '../components/radio/Radio';
 
 export default function HomePage() {
-  return <LiveChannels />;
+  return <Radio />;
 }

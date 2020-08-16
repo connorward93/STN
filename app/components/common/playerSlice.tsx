@@ -6,7 +6,7 @@ const playerSlice = createSlice({
   name: 'player',
   initialState: {
     playing: false,
-    current: '',
+    current: undefined,
     source: '',
     details: { title: '', subtitle: '', picture: '' },
   },

@@ -7,18 +7,22 @@ import {
   updatePlayer,
   updateSource,
   updateDetails,
+  currentPlayer,
 } from '../common/playerSlice';
+import Loading from '../common/Loading';
 import styles from './Mixtapes.css';
 
 export default function Mixtapes() {
   const dispatch = useDispatch();
   const [mixtapes, setMixtapes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = () =>
       axios
         .get('https://www.nts.live/api/v2/mixtapes')
-        .then((res) => setMixtapes(res.data.results));
+        .then((res) => setMixtapes(res.data.results))
+        .then(() => setLoading(false));
     fetchData();
   }, []);
 
@@ -57,17 +61,37 @@ export default function Mixtapes() {
         }}
       >
         <div className={styles.overlay} />
-        <div className={styles.mixtape__title}>{mixtape.title}</div>
+        <div className={styles.mixtape__title}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#fff"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          {mixtape.title}
+        </div>
       </button>
     );
   });
 
   return (
-    <div className={styles.mixtapes__container}>
-      <div className={styles.mixtapes__header}>
-        <h4>Mixtapes</h4>
-      </div>
-      {mixtapeComponents}
-    </div>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div
+          className={`${styles.mixtapes__container} ${
+            currentPlayer && styles.active__player
+          }`}
+        >
+          <div className={styles.mixtapes__header}>
+            <h4>Mixtapes</h4>
+          </div>
+          {mixtapeComponents}
+        </div>
+      )}
+    </>
   );
 }

@@ -1,6 +1,6 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/media-has-caption */
+import React, { useRef, MutableRefObject, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ReactPlayer from 'react-player';
 import {
   play,
   pause,
@@ -8,26 +8,43 @@ import {
   currentSource,
   currentDetails,
 } from '../common/playerSlice';
-import styles from './Mixtapes.css';
+import styles from './Radio.css';
 
-export default function MixtapePlayer() {
-  const { title, subtitle, picture } = useSelector(currentDetails);
+export default function RadioPlayer() {
   const dispatch = useDispatch();
-  const sub = subtitle.length >= 50 ? `${subtitle.substr(0, 48)}...` : subtitle;
+  const audio = useRef() as MutableRefObject<HTMLAudioElement>;
+  const state = useSelector(playing);
+  const current = useSelector(currentSource);
+  const { title, subtitle, picture } = useSelector(currentDetails);
+
+  useEffect(() => {
+    if (state) {
+      audio.current.play();
+    } else {
+      audio.current.pause();
+    }
+  });
+
+  interface Source {
+    [index: string]: string;
+  }
+
+  const src: Source = {
+    '1': 'https://stream-relay-geo.ntslive.net/stream',
+    '2': 'https://stream-relay-geo.ntslive.net/stream2',
+  };
+
   return (
     <div className={styles.player__container}>
-      <ReactPlayer
-        width="0"
-        url={useSelector(currentSource)}
-        config={{ file: { forceAudio: true } }}
-        playing={useSelector(playing)}
-      />
+      <>
+        <audio preload="none" ref={audio} src={src[`${current}`]} />
+      </>
       <div
         className={styles.player__thumb}
         style={{
           backgroundImage: `url(
-        ${picture}
-      )`,
+          ${picture}
+        )`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -69,7 +86,7 @@ export default function MixtapePlayer() {
       </div>
       <div className={styles.player__details}>
         <h6>{title}</h6>
-        <span>{sub}</span>
+        <span>{subtitle}</span>
       </div>
     </div>
   );

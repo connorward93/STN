@@ -18,9 +18,9 @@
 .player__container {
   position: fixed;
   z-index: 11;
-  bottom: 0;
+  bottom: -2px;
   height: 64px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   background-color: #000;
   width: 100%;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   height: 0px;
 }
 
-.player__thumb {
+/* .player__thumb {
   height: 64px;
   width: 64px;
   min-width: 64px;
@@ -43,17 +43,17 @@
   width: 40px;
   height: 40px;
   margin: auto;
-}
+} */
 
-.player__details {
+/* .player__details {
   display: flex;
   justify-content: center;
   flex-direction: column;
   font-size: 12px;
   margin-left: 10px;
-}
+} */
 
-.player__details h6 {
+/* .player__details h6 {
   font-weight: 500;
   margin-bottom: 2px;
-}
+} */
