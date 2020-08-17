@@ -57,7 +57,7 @@ export default function Picks() {
               fetchData(offset);
             }}
           >
-            Load more
+            More
           </button>
         </>
       )}

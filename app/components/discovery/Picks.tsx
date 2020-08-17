@@ -53,7 +53,7 @@ export default function Latest() {
               fetchData(offset);
             }}
           >
-            Load more
+            More
           </button>
         </>
       )}

@@ -53,7 +53,7 @@ export default function Guests() {
               fetchData(offset);
             }}
           >
-            Load more
+            More
           </button>
         </>
       )}
