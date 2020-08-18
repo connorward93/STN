@@ -26,9 +26,9 @@
 }
 
 .discovery__header h4 {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
 }
 
 .discovery__transition {
@@ -151,4 +151,11 @@
   color: #999;
   border: 1px solid #999;
   margin-bottom: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.load__more:hover {
+  opacity: 0.75;
+  text-decoration: none;
+  cursor: pointer;
 }

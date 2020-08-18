@@ -60,7 +60,7 @@ const createWindow = async () => {
     show: false,
     width: 470,
     height: 840,
-    // resizable: false,
+    resizable: false,
     webPreferences:
       (process.env.NODE_ENV === 'development' ||
         process.env.E2E_BUILD === 'true') &&

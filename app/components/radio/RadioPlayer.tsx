@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, MutableRefObject, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -85,7 +86,7 @@ export default function RadioPlayer() {
         </div>
       </div>
       <div className={styles.player__details}>
-        <h6>{title}</h6>
+        <h6 dangerouslySetInnerHTML={{ __html: title }} />
         <span>{subtitle}</span>
       </div>
     </div>
