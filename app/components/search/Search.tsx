@@ -73,7 +73,7 @@ export default function Search() {
             >
               <input
                 type="search"
-                placeholder="Search"
+                placeholder="🔍 Search"
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </form>

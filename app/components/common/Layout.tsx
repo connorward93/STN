@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Layout.css';
@@ -18,6 +20,10 @@ export default function Layout(props: Props) {
           isMenuOpen ? `${styles.nav} ${styles.collapsed}` : styles.nav
         }
       >
+        <div
+          className={styles.overlay}
+          onClick={() => toggleMenu(!isMenuOpen)}
+        />
         <Link to="/" onClick={() => toggleMenu(!isMenuOpen)}>
           Live
         </Link>
@@ -31,7 +37,6 @@ export default function Layout(props: Props) {
           Mixtapes
         </Link>
       </div>
-      {isMenuOpen && <div className={styles.overlay} />}
 
       <button
         type="button"

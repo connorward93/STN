@@ -38,7 +38,13 @@ export default function RadioPlayer() {
   return (
     <div className={styles.player__container}>
       <>
-        <audio preload="none" ref={audio} src={src[`${current}`]} />
+        <audio
+          onPause={() => dispatch(pause())}
+          onPlay={() => dispatch(play())}
+          preload="none"
+          ref={audio}
+          src={src[`${current}`]}
+        />
       </>
       <div
         className={styles.player__thumb}
