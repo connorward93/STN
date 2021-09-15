@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import ListItem from './ListItem';
-import Loading from '../common/Loading';
-import styles from './Discovery.css';
+import ListItem from '../DiscoveryItem';
+import Loading from '../../Base/Loading';
+import styles from '../discovery.module.css';
 
 type Props = {
   name: string;
@@ -14,28 +14,28 @@ type Props = {
   mixcloud: string;
 };
 
-export default function Guests() {
-  const [guests, setGuests] = useState<Props[]>([]);
+export default function Latest() {
+  const [picks, setPicks] = useState<Props[]>([]);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(12);
 
   const fetchData = useCallback(
     (n: number) =>
       axios
-        .get(`https://www.nts.live/api/v2/shows/guests/?offset=${n}`)
+        .get(`https://www.nts.live/api/v2/collections/nts-picks/?offset=${n}`)
         .then((res) => {
-          return setGuests([...guests, ...res.data.embeds.episodes.results]);
+          return setPicks([...picks, ...res.data.results]);
         })
         .then(() => setLoading(false)),
-    [guests]
+    [picks]
   );
 
   useEffect(() => {
     fetchData(0);
   }, []);
 
-  const guestsComponents = guests.map((guest: Props) => {
-    return <ListItem key={guest.name} data={guest} />;
+  const picksComponents = picks.map((pick: Props) => {
+    return <ListItem key={pick.name} data={pick} />;
   });
 
   return (
@@ -44,7 +44,7 @@ export default function Guests() {
         <Loading />
       ) : (
         <>
-          <div className={styles.discovery__transition}>{guestsComponents}</div>
+          <div className={styles.transition}>{picksComponents}</div>
           <button
             type="button"
             className={styles.load__more}

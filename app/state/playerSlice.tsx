@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '../../store';
+import { RootState } from '../store';
+
+export type PlayerState = {
+  playing: boolean;
+  current?: string;
+  source: string;
+  detauls?: { title: string; subtitle: string; picture: string };
+};
 
 const playerSlice = createSlice({
   name: 'player',

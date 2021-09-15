@@ -1,4 +1,4 @@
-.discovery__container {
+.container {
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
@@ -6,11 +6,11 @@
   flex-direction: column;
 }
 
-.discovery__container.active__player {
+.container.active-player {
   margin-bottom: 60px;
 }
 
-.discovery__header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,17 +25,17 @@
   height: 48px;
 }
 
-.discovery__header h4 {
+.header h4 {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
 
-.discovery__transition {
+.transition {
   animation: fadein 0.5s ease;
 }
 
-.discovery__nav {
+.nav {
   padding: 8px 20px 16px 20px;
   display: flex;
   justify-content: space-between;
@@ -49,18 +49,18 @@
   background-color: #000;
 }
 
-.mix__container {
+.container {
   padding: 2px 0;
   animation: fadein 0.5s ease;
 }
 
-.mix__thumbnail {
+.thumbnail {
   position: relative;
   width: 100vw;
   height: 56.25vw;
 }
 
-.mix__button {
+.button {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -73,50 +73,50 @@
   height: 40px;
 }
 
-.mix__button svg {
+.button svg {
   width: 30px;
   height: 30px;
   margin-left: -1px;
 }
 
-.mix__description {
+.description {
   padding: 12px;
   padding-bottom: 30px;
   position: relative;
 }
 
-.mix__description h5 {
+.description h5 {
   margin-top: 2px;
   font-size: 14px;
 }
 
-.mix__description h6,
-.mix__date {
+.description h6,
+.date {
   font-size: 12px;
   letter-spacing: 0.5px;
 }
 
-.mix__title {
+.title {
   font-weight: 500;
 }
 
-.mix__description .mix__html {
+.description .html {
   margin-top: 6px;
   text-transform: none;
   line-height: 1.5;
 }
 
-.mix__date {
+.date {
   position: absolute;
   top: 12px;
   right: 12px;
 }
 
-.mix__genre__container {
+.mix-genre-container {
   margin-top: 12px;
 }
 
-.mix__genre {
+.mix-genre {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.5px;

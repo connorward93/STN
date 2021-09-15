@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
-import { currentPlayer } from './playerSlice';
-import RadioPlayer from '../radio/RadioPlayer';
-import MixtapePlayer from '../mixtapes/MixtapePlayer';
-import MixcloudPlayer from '../mixcloud/MixcloudPlayer';
+import { currentPlayer } from '../../state/playerSlice';
+import RadioPlayer from '../Radio/RadioPlayer';
+import MixtapePlayer from '../Mixtapes/MixtapePlayer';
+import MixcloudPlayer from '../Mixcloud/MixcloudPlayer';
 
 interface Source {
   [index: string]: ReactNode;

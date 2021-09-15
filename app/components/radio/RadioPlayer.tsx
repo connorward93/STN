@@ -8,8 +8,8 @@ import {
   playing,
   currentSource,
   currentDetails,
-} from '../common/playerSlice';
-import styles from './Radio.css';
+} from '../../state/playerSlice';
+import styles from './radio-player.module.css';
 
 export default function RadioPlayer() {
   const dispatch = useDispatch();
@@ -36,7 +36,7 @@ export default function RadioPlayer() {
   };
 
   return (
-    <div className={styles.player__container}>
+    <div className={styles.container}>
       <>
         <audio
           onPause={() => dispatch(pause())}
@@ -47,7 +47,7 @@ export default function RadioPlayer() {
         />
       </>
       <div
-        className={styles.player__thumb}
+        className={styles.thumb}
         style={{
           backgroundImage: `url(
           ${picture}
@@ -60,7 +60,7 @@ export default function RadioPlayer() {
           {useSelector(playing) ? (
             <button
               type="button"
-              className={styles.player__button}
+              className={styles.button}
               onClick={() => dispatch(pause())}
             >
               <svg
@@ -75,12 +75,12 @@ export default function RadioPlayer() {
           ) : (
             <button
               type="button"
-              className={styles.player__button}
+              className={styles.button}
               onClick={() => dispatch(play())}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={styles.player__button}
+                className={styles.button}
                 viewBox="0 0 24 24"
                 fill="#fff"
               >
@@ -91,7 +91,7 @@ export default function RadioPlayer() {
           )}
         </div>
       </div>
-      <div className={styles.player__details}>
+      <div className={styles.details}>
         <h6 dangerouslySetInnerHTML={{ __html: title }} />
         <span>{subtitle}</span>
       </div>

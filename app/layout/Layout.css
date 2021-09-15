@@ -141,16 +141,7 @@
   left: 50%;
 }
 
-.spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 48px;
-  height: 48px;
-}
-
-/* .player__control {
+/* .genre-control {
   position: fixed;
   z-index: 11;
   right: 0;

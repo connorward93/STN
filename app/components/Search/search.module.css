@@ -1,11 +1,11 @@
-.search__container {
+.container {
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
   animation: fadein 0.5s ease;
 }
 
-.search__header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,13 +20,13 @@
   height: 48px;
 }
 
-.search__header h4 {
+.header h4 {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
 
-.search__defaults h6 {
+.defaults h6 {
   font-weight: 500;
   margin-left: 20px;
   margin-top: 5px;

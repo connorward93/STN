@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.player__container {
+.container {
   position: fixed;
   z-index: 11;
   bottom: -2px;
@@ -32,20 +32,20 @@
   height: 0px;
 }
 
-/* .player__thumb {
+/* .thumb {
   height: 64px;
   width: 64px;
   min-width: 64px;
   position: relative;
 }
 
-.player__button {
+.button {
   width: 40px;
   height: 40px;
   margin: auto;
 } */
 
-/* .player__details {
+/* .details {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -53,7 +53,7 @@
   margin-left: 10px;
 } */
 
-/* .player__details h6 {
+/* .details h6 {
   font-weight: 500;
   margin-bottom: 2px;
 } */

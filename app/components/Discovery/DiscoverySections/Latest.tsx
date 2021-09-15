@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import ListItem from './ListItem';
-import Loading from '../common/Loading';
-import styles from './Discovery.css';
+import ListItem from '../DiscoveryItem';
+import Loading from '../../Base/Loading';
+import styles from '../discovery.module.css';
 
 type Props = {
   name: string;
@@ -46,9 +46,7 @@ export default function Picks() {
         <Loading />
       ) : (
         <>
-          <div className={styles.discovery__transition}>
-            {recentlyAddedComponents}
-          </div>
+          <div className={styles.transition}>{recentlyAddedComponents}</div>
           <button
             type="button"
             className={styles.load__more}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Loading from '../common/Loading';
-import styles from './Discovery.css';
+import Loading from '../../Base/Loading';
+import styles from '../discovery.module.css';
 
 export default function Genres() {
   const [genres, setGenres] = useState([]);

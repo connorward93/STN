@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Loading from '../common/Loading';
-import ListItem from './ListItem';
-import styles from './Search.css';
+import Loading from '../Base/Loading';
+import ListItem from './SearchItem';
+import styles from './search.module.css';
 
 export default function Search() {
   const param = new URLSearchParams(useLocation().search).get('q');
@@ -59,8 +59,8 @@ export default function Search() {
       {loading ? (
         <Loading />
       ) : (
-        <div className={styles.search__container}>
-          <div className={styles.search__header}>
+        <div className={styles.container}>
+          <div className={styles.header}>
             <h4>Search</h4>
           </div>
           <div className={styles.searchbar}>
@@ -81,7 +81,7 @@ export default function Search() {
           {resultsComponents.length >= 1 ? (
             resultsComponents
           ) : (
-            <div className={styles.search__defaults}>
+            <div className={styles.defaults}>
               <h6>Recommended</h6>
               {defaultComponents}
             </div>

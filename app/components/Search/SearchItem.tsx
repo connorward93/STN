@@ -7,9 +7,8 @@ import {
   updatePlayer,
   updateSource,
   updateDetails,
-} from '../common/playerSlice';
-
-import styles from '../discovery/Discovery.css';
+} from '../../state/playerSlice';
+import styles from '../discovery/discovery.module.css';
 
 type Props = {
   data: {
@@ -25,9 +24,9 @@ export default function ListItem(props: Props) {
   const dispatch = useDispatch();
   const { data } = props;
   return (
-    <div className={styles.mix__container}>
+    <div className={styles.container}>
       <div
-        className={styles.mix__thumbnail}
+        className={styles.thumbnail}
         style={{
           backgroundImage: `url(
                 ${data.image.medium_large}
@@ -37,7 +36,7 @@ export default function ListItem(props: Props) {
       >
         <button
           type="button"
-          className={styles.mix__button}
+          className={styles.button}
           onClick={() => {
             dispatch(updateSource(data.audio.url));
             dispatch(
@@ -61,13 +60,13 @@ export default function ListItem(props: Props) {
           </svg>
         </button>
       </div>
-      <div className={styles.mix__description}>
-        <h6 className={styles.mix__title}>{data.title}</h6>
-        <span className={styles.mix__date}>
+      <div className={styles.description}>
+        <h6 className={styles.title}>{data.title}</h6>
+        <span className={styles.date}>
           {moment(data.broadcast).format('DD.MM.YYYY')}
         </span>
         <div
-          className={styles.mix__html}
+          className={styles.html}
           dangerouslySetInnerHTML={{ __html: data.description.highlight_html }}
         />
       </div>

@@ -7,15 +7,16 @@ import {
   playing,
   currentSource,
   currentDetails,
-} from '../common/playerSlice';
-import styles from './Mixtapes.css';
+} from '../../state/playerSlice';
+import styles from './mixtapes-player.module.css';
 
 export default function MixtapePlayer() {
   const { title, subtitle, picture } = useSelector(currentDetails);
   const dispatch = useDispatch();
   const sub = subtitle.length >= 50 ? `${subtitle.substr(0, 48)}...` : subtitle;
+
   return (
-    <div className={styles.player__container}>
+    <div className={styles.container}>
       <ReactPlayer
         width="0"
         url={useSelector(currentSource)}
@@ -23,7 +24,7 @@ export default function MixtapePlayer() {
         playing={useSelector(playing)}
       />
       <div
-        className={styles.player__thumb}
+        className={styles.thumb}
         style={{
           backgroundImage: `url(
         ${picture}
@@ -36,7 +37,7 @@ export default function MixtapePlayer() {
           {useSelector(playing) ? (
             <button
               type="button"
-              className={styles.player__button}
+              className={styles.button}
               onClick={() => dispatch(pause())}
             >
               <svg
@@ -51,12 +52,12 @@ export default function MixtapePlayer() {
           ) : (
             <button
               type="button"
-              className={styles.player__button}
+              className={styles.button}
               onClick={() => dispatch(play())}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={styles.player__button}
+                className={styles.button}
                 viewBox="0 0 24 24"
                 fill="#fff"
               >
@@ -67,7 +68,7 @@ export default function MixtapePlayer() {
           )}
         </div>
       </div>
-      <div className={styles.player__details}>
+      <div className={styles.details}>
         <h6>{title}</h6>
         <span>{sub}</span>
       </div>

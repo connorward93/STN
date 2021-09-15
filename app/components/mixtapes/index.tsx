@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import {
   play,
@@ -8,14 +8,15 @@ import {
   updateSource,
   updateDetails,
   currentPlayer,
-} from '../common/playerSlice';
-import Loading from '../common/Loading';
-import styles from './Mixtapes.css';
+} from '../../state/playerSlice';
+import Loading from '../Base/Loading';
+import styles from './mixtapes.module.css';
 
 export default function Mixtapes() {
   const dispatch = useDispatch();
   const [mixtapes, setMixtapes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const current = useSelector(currentPlayer);
 
   useEffect(() => {
     const fetchData = () =>
@@ -39,7 +40,7 @@ export default function Mixtapes() {
       <button
         type="button"
         key={mixtape.mixtape_alias}
-        className={styles.mixtape__item}
+        className={styles.item}
         style={{
           backgroundImage: `url(
         ${mixtape.media.picture_large}
@@ -61,7 +62,7 @@ export default function Mixtapes() {
         }}
       >
         <div className={styles.overlay} />
-        <div className={styles.mixtape__title}>
+        <div className={styles.title}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -82,11 +83,11 @@ export default function Mixtapes() {
         <Loading />
       ) : (
         <div
-          className={`${styles.mixtapes__container} ${
-            currentPlayer && styles.active__player
+          className={`${styles.container} ${
+            current ? styles['active-player'] : null
           }`}
         >
-          <div className={styles.mixtapes__header}>
+          <div className={styles.header}>
             <h4>Mixtapes</h4>
           </div>
           {mixtapeComponents}

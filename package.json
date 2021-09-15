@@ -1,7 +1,7 @@
 {
   "name": "stn-desktop",
   "productName": "stn-desktop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Desktop client for NTS radio.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -275,10 +275,5 @@
     "extends": [
       "bliss"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

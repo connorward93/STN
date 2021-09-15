@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ReactPlayer from 'react-player';
-import { playing, currentSource } from '../common/playerSlice';
-import styles from './Mixcloud.css';
+import { playing, currentSource } from '../../state/playerSlice';
+import styles from './mixcloud.module.css';
 
 export default function MixcloudPlayer() {
   return (
-    <div className={styles.player__container}>
+    <div className={styles.container}>
       <ReactPlayer
         width="100vw"
         className="repostable"

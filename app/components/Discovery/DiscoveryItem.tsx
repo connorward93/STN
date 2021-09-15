@@ -7,8 +7,8 @@ import {
   updatePlayer,
   updateSource,
   updateDetails,
-} from '../common/playerSlice';
-import styles from './Discovery.css';
+} from '../../state/playerSlice';
+import styles from './discovery.module.css';
 
 type Props = {
   data: {
@@ -25,9 +25,9 @@ export default function ListItem(props: Props) {
   const { data } = props;
   const dispatch = useDispatch();
   return (
-    <div className={styles.mix__container}>
+    <div className={styles.container}>
       <div
-        className={styles.mix__thumbnail}
+        className={styles.thumbnail}
         style={{
           backgroundImage: `url(
                 ${data.media.background_medium_large}
@@ -37,7 +37,7 @@ export default function ListItem(props: Props) {
       >
         <button
           type="button"
-          className={styles.mix__button}
+          className={styles.button}
           onClick={() => {
             dispatch(updateSource(data.mixcloud));
             dispatch(
@@ -61,17 +61,17 @@ export default function ListItem(props: Props) {
           </svg>
         </button>
       </div>
-      <div className={styles.mix__description}>
+      <div className={styles.description}>
         <h6>{data.location_long}</h6>
         <h5>{data.name}</h5>
-        <span className={styles.mix__date}>
+        <span className={styles.date}>
           {moment(data.broadcast).format('DD.MM.YYYY')}
         </span>
-        <div className={styles.mix__genre__container}>
+        <div className={styles['mix-genre-container']}>
           {data.genres.map((genre) => {
             return (
               <Link to={`/search/?q=${genre.value}`} key={genre.id}>
-                <span className={styles.mix__genre}>{genre.value}</span>
+                <span className={styles['mix-genre']}>{genre.value}</span>
               </Link>
             );
           })}

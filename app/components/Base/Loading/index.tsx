@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Layout.css';
+import styles from './loading.module.css';
 
 export default function Loading() {
   return (
-    <div className={styles.spinner}>
+    <div className={styles.container}>
       <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
         <g transform="rotate(0 50 50)">
           <rect

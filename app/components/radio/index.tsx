@@ -12,9 +12,9 @@ import {
   updateDetails,
   currentSource,
   currentPlayer,
-} from '../common/playerSlice';
-import Loading from '../common/Loading';
-import styles from './Radio.css';
+} from '../../state/playerSlice';
+import Loading from '../Base/Loading';
+import styles from './radio.module.css';
 
 export default function Radio() {
   const dispatch = useDispatch();
@@ -88,9 +88,9 @@ export default function Radio() {
           tabIndex={0}
           aria-hidden="true"
         >
-          <div className={styles.channel__overlay} />
+          <div className={styles.overlay} />
           <div
-            className={styles.channel__thumbnail}
+            className={styles.thumbnail}
             style={{
               backgroundImage: `url(
                 ${channel.now.embeds.details.media.background_large}
@@ -99,11 +99,9 @@ export default function Radio() {
               backgroundPosition: 'center',
             }}
           >
-            <div className={styles.channel__title}>
-              <span className={styles.channel__icon}>
-                {channel.channel_name}
-              </span>
-              <div className={styles.channel__description}>
+            <div className={styles.title}>
+              <span className={styles.icon}>{channel.channel_name}</span>
+              <div className={styles.description}>
                 <h5
                   dangerouslySetInnerHTML={{
                     __html: desc,
@@ -112,14 +110,14 @@ export default function Radio() {
                 <span className={styles.time}>{time}</span>
               </div>
             </div>
-            <div className={styles.channel__location}>
+            <div className={styles.location}>
               {channel.now.embeds.details.location_long}
             </div>
             {current === channel.channel_name &&
             playState === true &&
             player === 'channel' ? (
               <svg
-                className={styles.channel__play}
+                className={styles.play}
                 width="40px"
                 height="40px"
                 viewBox="0 0 24 24"
@@ -130,7 +128,7 @@ export default function Radio() {
               </svg>
             ) : (
               <svg
-                className={styles.channel__play}
+                className={styles.play}
                 width="40px"
                 height="40px"
                 fill="#fff"
@@ -152,9 +150,7 @@ export default function Radio() {
         <Loading />
       ) : (
         <div
-          className={`${styles.channel__container} ${
-            player && styles.active__player
-          }`}
+          className={`${styles.container} ${player && styles['active-player']}`}
         >
           {channelComponents}
         </div>

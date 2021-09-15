@@ -1,15 +1,15 @@
-.mixtapes__container {
+.container {
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
   animation: fadein 0.5s ease;
 }
 
-.mixtapes__container.active__player {
+.container.active-player {
   margin-bottom: 60px;
 }
 
-.mixtapes__header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,13 +24,13 @@
   height: 48px;
 }
 
-.mixtapes__header h4 {
+.header h4 {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.6px;
 }
 
-.mixtape__item {
+.item {
   padding: 48px;
   border-top: 1px solid #666;
   width: 100%;
@@ -53,69 +53,20 @@
   display: flex;
 }
 
-.mixtape__title {
+.title {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.mixtape__title svg {
+.title svg {
   margin-right: 6px;
   width: 24px;
   height: 24px;
 }
 
-.player__container {
-  position: fixed;
-  z-index: 11;
-  bottom: 0;
-  height: 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  backdrop-filter: blur(15px);
-}
-
-.player {
-  width: 100%;
-  height: 0px;
-}
-
-.player__thumb {
-  height: 60px;
-  width: 60px;
-  min-width: 60px;
-  position: relative;
-}
-
-.player__button {
+.button {
   width: 35px;
   height: 35px;
   margin: auto;
-}
-
-.player__details {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 12px;
-  margin-left: 10px;
-  text-transform: uppercase;
-  line-height: 1.3;
-}
-
-.player__details h6 {
-  font-weight: 500;
-  font-size: 12px;
-  margin-bottom: 2px;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
